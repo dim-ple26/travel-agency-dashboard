@@ -1,12 +1,16 @@
+import { MobileSidebar, Navitems } from 'components'
 import React from 'react'
 import { Outlet } from 'react-router'
+import { SidebarComponent } from '@syncfusion/ej2-react-navigations'
 
 const AdminLayout = () => {
   return (
     <div className='admin-layout'>
-      Mobile Sidebar 
+      <MobileSidebar/> 
       <aside className='w-full max-w-[270px] hidden lg:block'>
-        Sidebar
+        <SidebarComponent width={270} enableGestures={false}>
+            <Navitems handleClick={() => console.log('Navitem clicked')} />
+        </SidebarComponent>
       </aside>
 
       <aside className='children'>
